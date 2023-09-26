@@ -26,6 +26,9 @@ jobs:
 
       - name: List Contents of 'dist' Directory
         run: ls -l dist  # Elencare il contenuto della directory 'dist'
+      
+      - name: List Contents of 'dist' Directory 2
+        run: ls -l  # Elencare il contenuto della directory 'dist'
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
