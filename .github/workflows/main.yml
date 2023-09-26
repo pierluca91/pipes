@@ -36,4 +36,4 @@ jobs:
           server: "testwent.eu"
           username: "GitHub"
           password: "W3nt3rpr1s3!"
-          local-dir: "./dist/pipe/*"
+          local-dir: "./dist/pipe/"
