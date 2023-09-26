@@ -1,0 +1,41 @@
+name: Build and Deploy Angular App 2
+
+on:
+  push:
+    branches:
+      - rilascio  # Puoi specificare il nome del tuo branch principale
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: npm run build
+
+      - name: List Contents of 'dist' Directory
+        run: ls -l dist  # Elencare il contenuto della directory 'dist'
+      
+      - name: List Contents of 'dist' Directory 2
+        run: cd dist/piep && ls  # Elencare il contenuto della directory 'dist' d
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: testwent.eu
+          username: GitHub
+          password: W3nt3rpr1s3!
+          local-dir: ./dist/pipe/
+          server-dir: /test/
+          log-level: verbose
