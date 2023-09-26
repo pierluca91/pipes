@@ -33,4 +33,4 @@ jobs:
           ftp-server: "ftp://testwent.eu:21"
           ftp-username: "GitHub"
           ftp-password: "W3nt3rpr1s3!"
-          local-dir: "dist/"
+          local-dir: "/usr/bin/bash/dist/"
