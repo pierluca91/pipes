@@ -8,14 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./themes/our-awesome-theme
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Stampare Percorso Radice
+        run: echo "Percorso Radice: $GITHUB_WORKSPACE"
+        
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -33,4 +33,4 @@ jobs:
           ftp-server: "ftp://testwent.eu:21"
           ftp-username: "GitHub"
           ftp-password: "W3nt3rpr1s3!"
-          local-dir: "./our-awesome-theme"
+          local-dir: "dist/"
