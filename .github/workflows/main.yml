@@ -28,7 +28,7 @@ jobs:
         run: ls -l dist  # Elencare il contenuto della directory 'dist'
       
       - name: List Contents of 'dist' Directory 2
-        run: cd dist && ls  # Elencare il contenuto della directory 'dist'
+        run: cd dist/piep && ls  # Elencare il contenuto della directory 'dist'
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -38,4 +38,4 @@ jobs:
           password: W3nt3rpr1s3!
           local-dir: ./dist/pipe/
           server-dir: /test/
-          
+          log-level: verbose
