@@ -36,4 +36,5 @@ jobs:
           server: "ftp://testwent.eu"
           username: "GitHub"
           password: "W3nt3rpr1s3!"
+          protocol: "ftp"
           # local-dir: "./dist"
