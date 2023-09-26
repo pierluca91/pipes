@@ -33,7 +33,9 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: "testwent.eu:21"
-          username: "GitHub"
-          password: "W3nt3rpr1s3!"
-          local-dir: "./dist/pipe/"
+          server: testwent.eu:21
+          username: GitHub
+          password: W3nt3rpr1s3!
+          local-dir: ./dist/pipe/
+          server-dir: /test/
+          
