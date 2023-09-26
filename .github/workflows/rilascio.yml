@@ -39,3 +39,4 @@ jobs:
           local-dir: ./dist/pipe/
           server-dir: /test/
           log-level: verbose
+          port: 21
