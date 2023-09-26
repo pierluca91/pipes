@@ -28,7 +28,7 @@ jobs:
         run: ls -l dist  # Elencare il contenuto della directory 'dist'
       
       - name: List Contents of 'dist' Directory 2
-        run: cd dist/piep && ls  # Elencare il contenuto della directory 'dist'
+        run: cd dist/piep && ls  # Elencare il contenuto della directory 'dist' d
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
