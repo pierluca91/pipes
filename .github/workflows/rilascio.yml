@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -32,11 +30,13 @@ jobs:
       - name: List Contents of 'dist' Directory 2
         run: cd dist/pipe && ls  # Elencare il contenuto della directory 'dist' d
 
-      - name: "Deploy"
-        uses: milanmk/actions-file-deployer@master
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          remote-protocol: "ftp"
-          remote-host: "testwent.eu"
-          remote-user: "GitHub"
-          ssh-private-key: W3nt3rpr1s3!
-          remote-path: "/test"
+          server: testwent.eu
+          username: GitHub
+          password: W3nt3rpr1s3!
+          local-dir: ./dist/pipe/
+          server-dir: /test/
+          log-level: verbose
+          port: 21
